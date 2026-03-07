@@ -15,7 +15,7 @@ const sum1  = (a,b)  => {
     console.log(a+b);
     return a + b;
 }
-let result2 = sum(20,30);
+let result2 = sum1(20,30);
 
 // Problem : Write a function that will take string as  a parameter and will return the number of vowels in it 
 
