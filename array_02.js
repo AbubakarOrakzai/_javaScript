@@ -8,7 +8,7 @@ console.log(old); // it will print the old array with the even array as an eleme
 let whole = old.concat(even);
 console.log(whole); // it will print the whole array that is the combination of the old and even arrays
 
-
+// ==== Spread operator ====
 let natural = [1,2,3,4,5];
 let wholeNumbers = [0,1,2,3,4,5];
 let negativeNumbers = [-1,-2,-3,-4,-5];
@@ -23,4 +23,7 @@ let flatArr1 = arr1.flat(Infinity);
 
 console.log( Array.isArray("Abubakar")); // it will return false because the string is not an array
 console.log(Array .from("Abubakar")); // it will return an array that contains the characters of the string as elements in the array
- console.log(Array.from({name: "Abubakar"}))
+
+// Interesting and important for interview question
+ console.log(Array.from({name: "Abubakar"})) // The array.from() method on the iterable datatype and as the object is not and iterable 
+ // datatype so it will return an empty array because it does not know how many space to allocate for the array and it does not know how to fill the array so it will return an empty array
