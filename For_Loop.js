@@ -55,7 +55,7 @@ for(let i=1; i<=10 ; i++)
 // Continue
 
 // In the continue it will only skip one value or does not exute the below instruction only one time 
-// like in our case it will only not print the value of the 4 
+// like in our case it will only not print the value of the 10 
 for(let i =1 ; i<=10; i++)
 {
     if(i == 10 )

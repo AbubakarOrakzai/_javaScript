@@ -1,5 +1,5 @@
-const obj1 = {};                 // Object literal :: This is non single ton object
-const obj2 = new Object();       // Constructor    :: This is single ton object
+const obj1 = {};                 // Object literal :: This is non singleton object
+const obj2 = new Object();       // Constructor    :: This is singleton object
 const obj3 = Object.create({});  // With custom prototype
 
 const tinderUser = {}
@@ -38,4 +38,4 @@ console.log(Object.keys(tinderUser));
 console.log(Object.values(tinderUser)); 
 console.log(Object.entries(tinderUser));
 
-console.log(tinderUser.hasOwnProperty("name")); // it will return true because the name property is an own property of the tinderUser object
+console.log(tinderUser.hasOwnProperty("name")); // It will the check does the name property exits
