@@ -3,7 +3,7 @@ const balance = new Decimal(1000); // Now the balance is a Decimal object
 console.log(balance);
 
 console.log(balance.tostring()); // Convert to string for display
-console.log(balance.toFixed(2)); // Format to 2 decimal places
+console.log(balance.toFixed(2)); // IT also force a number to round off and Format to 2 decimal places after the dot 
 
 const price = 123.654321;
 console.log(price.toPrecision(4)); // Format to 4 significant digits

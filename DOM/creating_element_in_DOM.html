@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        *{
+            font-size: 80px;
+            margin: 20px;
+        }
+        .parent{
+            border: 4px solid black;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="days">Monday</div>
+        <div class="days">Tuesday</div>
+        <div class="days">Wednesday</div>
+        <div class="days">Thursday</div>
+        <div class="days">Friday</div>
+        <div class="days">Saturday</div>
+        <div class="days">Sunday</div>
+    </div>
+</body>
+<script>
+         const parent = document.querySelector('.parent')
+          const days = parent.querySelectorAll('.days')
+          console.log(days)
+           days[1].style.background = "orange";
+           days[2].style.background = "green";
+           days[3].style.background = "yellow";
+           days[4].style.background = "red";
+
+           for(let i =0; i<parent.children.length; i++)
+           {
+            console.log(parent.children[i].innerHTML);
+           }
+
+
+           const div = document.createElement('div')
+           console.log(div);
+           div.className = "main"
+           div.id = Math.round(Math.random()*10+1)
+           div.setAttribute("title", "generated title")
+           div.style.backgroundColor = "green"
+           div.style.padding = "12px"
+           // div.innerText = "chai aur coode "   These are the two way to write in this one is in this one and other is in the next line 
+           const addText = document.createTextNode("Chai or Code")
+            div.appendChild(addText)
+
+            document.body.appendChild(div)
+        
+</script>
+</html>
