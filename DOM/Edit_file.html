@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit and remove element in DOM</title>
+</head>
+<body style="background-color:#212121; color: #fff;">
+    <ul>
+        <li>javaScipt</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(langName)
+    {
+        const li = document.createElement('li')
+        li.innerHTML = '${langName}'
+        document.querySelector('.language').appendChile(li)
+    }
+    addLanguage("python")
+    addLanguage("typeScipt")
+
+    // Now we can do the same thing but with the optimize way 
+  function addOpilanguage(langName)
+{
+    const li = document.createElement('li');
+    li.appendChild(document.createTextNode(langName))
+    document.querySelector('.language').appendchild(li)
+}
+addOpiLanguage('golang')
+
+//Edit
+const secondLang = document.querySelector("li:nth-child(2)")
+console.log(secondLang);
+secondLang.innerHTML = "Mojo"
+const newli = document.createElement('li')
+newli.textContent = "Mojo"
+secondLang.repkaceWith(newli)
+
+// Edit
+const firstLang = document.querySelector('li');
+firstLang.outerHTML = '<li>TypeScript</li>';
+
+//Remove
+const lastLang = document.querySelector('li:last-child')
+langName.remove()
+</script>
+</html>
