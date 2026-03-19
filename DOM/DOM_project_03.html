@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Gilroy;
+        }
+        html,body{
+            height:100%;
+            width: 100%;
+        }
+        #main{  /* This is an ID selector */
+            height: 100%;
+            width: 100%;
+            background-color: #111;
+            position:relative;
+        }
+        .elem{
+            height: 100px;
+            font-size: 40px;
+            width: 100%;
+            border-bottom: 2px solid #fff;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            padding-left: 20px;
+        }
+        .elem img{
+            height: 100px;
+            width: 100px;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 50%;
+            margin-left: 60px;
+            position: absolute;
+           transform: translate(-50%,-50%);
+           
+        }
+    </style>
+</head>
+<body>
+    <div id="main">  <!-- Changed from class="main" to id="main" -->
+        <div id = "elem1" class="elem">
+              <h1>Abubakar Orakzai</h1>
+        </div>
+        <div class="elem">
+            <h1>Full stack developer</h1>
+            <img src="https://plus.unsplash.com/premium_photo-1685086785230-2233cf5d8f28?q=80&w=1032&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+        </div>
+        <div class="elem">
+            <h1>system design</h1>
+            <img src="https://images.unsplash.com/photo-1523726491678-bf852e717f6a?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8c3lzdGVtJTIwZGVzaWdufGVufDB8fDB8fHww" alt="">
+        </div>
+        <div class="elem">
+            <h1>database</h1>
+            <img src="https://plus.unsplash.com/premium_photo-1664297989345-f4ff2063b212?q=80&w=1098&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+        </div>
+    </div>  <!-- Added missing closing tag -->
+</body>
+<script>
+    let elem1 = document.querySelector('#elem1')
+    let elemImage = document.querySelector("#elem1 img")
+    elem1.addEventListener("mousemove",function(dets){
+        elemImage.style.left.dets.x+"px"
+          elemImage.style.top = dets.y+"px"
+    })
+
+    elem1.addElmentListener("mouseenter",function(dets){
+        elemImage.style.opacity =1
+    })
+</script>
+</html>

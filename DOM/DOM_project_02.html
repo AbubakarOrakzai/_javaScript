@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css" rel="stylesheet"/>
+    <title>DOM object 02</title>
+    <style> 
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Gilroy;
+        }
+        html,body{
+            height:100%;
+            width: 100%;
+        }
+        body{
+            background-color:lightseagreen;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        #container{
+            height: 400px;
+            width: 350px;
+            border-radius: 10px;
+            background-color: red;
+            overflow: hidden;
+            position: relative;  /* Added this */
+            cursor: pointer;
+        }
+        #container img{
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            object-position: top;
+        }
+        #container i{
+            color: #fff;
+            font-size: 75px;
+            position:absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%) scale(0);  /* Start scaled to 0 */
+            opacity:0.8;
+            transition: all ease 0.4s;
+            pointer-events: none;  /* Prevents heart from blocking double-click */
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <img src="https://images.unsplash.com/photo-1536303158031-c868b371399f?q=80&w=688&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt=""> 
+        <i class="ri-heart-3-fill"></i>
+    </div>
+
+    <script>
+        let con = document.querySelector("#container")
+        let love = document.querySelector("#container i")  // More specific selector
+
+        con.addEventListener("dblclick", function(){
+            // Show heart with scale animation
+            love.style.transform = 'translate(-50%,-50%) scale(1)'
+            
+            // Hide heart after 1 second (reduced from 2 seconds for better UX)
+            setTimeout(function(){
+                love.style.transform = 'translate(-50%,-50%) scale(0)' 
+            }, 1000)
+        })
+    </script>
+</body>
+</html>

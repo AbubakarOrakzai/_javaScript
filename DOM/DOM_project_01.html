@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Project</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:'Gilroy';
+        }
+        html,body{
+            height:100%;
+            width:100%;
+        }
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: cornflowerblue;
+        }
+        #card{
+            height: 450px;
+            width:350px;
+            background-color:#fff;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        #card img{
+            height: 50%;
+            width: 100%;
+            border-radius: 20px;
+            object-fit: cover;
+            object-position: center;
+        }
+        #card h1{
+            font-size: 30px;
+            font-weight: 700;
+            margin: 10px 0;
+        }
+        #card h4{
+            font-size:35px;
+            color: red;
+            margin: 20px;
+        }
+        #card button{
+            background-color: cadetblue;
+            color:#fff;
+            font-weight:700;
+            padding: 12px 20px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="card">
+        <img src="https://plus.unsplash.com/premium_photo-1664474889359-7b2a6d500d4b?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+        <h1>Angel</h1>
+        <h4>Stranger</h4>
+        <div id="btn-container">
+            <button id="add">Add Friend</button>
+        </div>
+    </div>
+
+<script>
+    let statusText = document.querySelector("h4")
+    let button = document.querySelector("#add")
+
+    button.addEventListener("click", function () {
+        if (button.innerHTML === "Add Friend") {
+            statusText.innerHTML = "Friends"
+            statusText.style.color = "green"
+            button.innerHTML = "Remove"
+            button.style.backgroundColor = "#5f9ea0"
+            button.style.color = "#fff"
+        } else {
+            statusText.innerHTML = "Stranger"
+            statusText.style.color = "red"
+            button.innerHTML = "Add Friend"
+            button.style.backgroundColor = "#dadada"
+            button.style.color = "#111"
+        }
+    })
+</script>
+</body>
+</html>
