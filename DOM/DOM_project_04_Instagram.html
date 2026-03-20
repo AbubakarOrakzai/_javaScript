@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Gilroy';
+        }
+
+        html,body{
+            height: 100%;
+            width: 100%;
+        }
+
+        body{
+            background-color: rgb(0,208,255);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card{
+            height: 420px;
+            width: 300px;
+            background-color: #fff;
+            border-radius: 10px;
+            border: 3px solid #000;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .storiyan{
+            height: 120px;
+            width: 100%; 
+            border-bottom: 1px solid #dadada;
+            padding: 15px;
+            white-space:nowrap;
+            overflow-x: auto;
+            overflow-y: hidden;
+        }
+        .storiyan::-webkit-scrollbar{
+            display: none;
+        }
+
+        .story{
+            border: 3px solid red;
+            height: 80px;
+            width: 80px;
+            border-radius: 50%;
+            overflow: hidden;
+            display: inline-block;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        .story img{
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+        #full-screen{
+            height: 100%;
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+            z-index: 10;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <div id="full-screen"></div>
+        <div class="storiyan">
+            
+        </div>
+    </div>
+</body>
+<script>
+    var arr = [
+    {
+        dp: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgcMd0zqkjt6lyUevar9Subj6mdCVAF65dqA&s",
+        story: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&auto=format&fit=crop"
+    },
+    {
+        dp:"https://media.istockphoto.com/id/1201026026/photo/stylish-man-wearing-sunglasses-and-white-shirt-city-life.jpg?s=612x612&w=0&k=20&c=Lw3M3Eq3Cwwc7OqR4z3xVqEQvRBrGvQXbUDY8jB7eOE=",
+        story: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThCNodLM-ln5IrOeSTXFHNN_e0rzaW4U6cXQ&s"
+    },
+    {
+        dp: "https://media.istockphoto.com/id/1300966679/photo/young-handsome-man-in-classic-suit-over-the-lake-background.jpg?s=612x612&w=is&k=20&c=ZjqrxqNnDauFZCb9jmvTvKs2v1BikTk8dmXT3iDrz5g=",
+        story: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&auto=format&fit=crop"
+    },
+    {
+        dp:"https://media.istockphoto.com/id/808368316/photo/portrait-of-handsome-smiling-man.jpg?s=612x612&w=is&k=20&c=d6DlHXwZmalMgKJmG1JFqC-4yxPTBd9CtoeqjqTp1Dc=",
+        story: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIuREBrd8zs_4sjwebqJ4iFTD6UdSD-XI9cQ&s"  
+    },
+    {
+        dp: "https://images.unsplash.com/photo-1705922724042-23bf9d7eb01b?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bWFuJTIwbW9kZWx8ZW58MHx8MHx8fDA%3D",
+        story: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTr9bRCJdlUHAgvmKHJcNVafIjGKD5XiYbFyQ&s"
+    }
+];
+
+var storiyan = document.querySelector(".storiyan");
+var fullScreen = document.querySelector("#full-screen");
+
+var cluster = "";
+arr.forEach(function(elem, idx){
+    cluster += `<div class="story" data-index="${idx}">
+                    <img src="${elem.dp}" alt="">
+                </div>`;
+});
+
+storiyan.innerHTML = cluster;
+
+storiyan.addEventListener("click", function(dets) {
+    var storyDiv = dets.target.closest('.story');
+    if (storyDiv) {
+        var index = storyDiv.dataset.index;
+        fullScreen.style.display = "block";
+        fullScreen.style.backgroundImage = `url('${arr[index].story}')`;
+    }
+});
+
+fullScreen.addEventListener("click", function() {
+    this.style.display = "none";
+});
+
+</script>
+</html>
