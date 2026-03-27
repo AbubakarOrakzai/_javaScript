@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    //                             == setTimeout and clearTimeout
+    <h1>code with me</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+ /*   setTimeout(function(){
+        console.log("Abubakar Orakzai");
+    },5000);   
+    // setTimout is a method but also call an API.                          
+                                                                           // Handler :: Handler is function which does not have name
+
+    // we can also write the same funciton like this 
+
+    const name = function(){
+        console.log("Abubakar Orakzai");
+    }
+
+    setTimeout(name,4000) // Here we are give the reference of the function 
+
+    // Now we making function which will change the text after the time interval 
+*/
+
+// Now the code will first display code with me first and then after 5 se
+    const name_01 = function(){      
+        console.log("Abubakar")
+    }
+
+    const changetext = function()
+    {
+        document.querySelector('h1').innerHTML = "Code with Abubakar Orakzai"
+    }
+    const ChangMe = setTimeout(changetext,2000)
+
+    document.querySelector('#stop').addEventListener('click',function(){
+        clearTimeout(changeMe)       // This method destroy the setTimeout
+        console.log("STOPPED")
+    })
+</script>
+</html>
