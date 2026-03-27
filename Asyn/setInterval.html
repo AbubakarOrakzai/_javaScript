@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>code with Abubakar Orakzai</h1>
+    <button id="start">start</button>
+    <button id="stop">stop</button>
+    </body>
+<script>
+/* setInterval(function(){
+            console.log("Abubakar Orakzai",Date.now());
+        },2000)*/
+
+const sayDate = function(str){
+    console.log(str,Date.now(), 2000)
+}
+const interval = setInterval(sayDate,2000,"hi")
+
+// Now it will continue on excuting and printing the string again and again 
+// So to overcome that we use clearinterval which will stop the execution 
+
+clearInterval(interval);
+</script>
+</html>
