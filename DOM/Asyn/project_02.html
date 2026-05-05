@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 02</title>
+    <style>
+        *{
+            margin:0px;
+            padding:0px;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: lightgray;
+        }
+        .project{
+
+            border: 2px solid black;
+            width: 300px;
+        }
+        table{
+            border: 2px solid black;
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td{
+            border: 2px solid black;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="project">
+        <table id="keyTable">
+            <thead>
+                <tr>
+                    <th>Key</th>
+                    <th>KeyCode</th>
+                    <th>Code</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+                <tr>
+                    <td>Press any key</td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+<script>
+    const tableBody = document.getElementById('tableBody');
+
+    window.addEventListener('keydown', (e) => {
+        // Create new row with the pressed key information
+        const newRow = document.createElement('tr');
+        newRow.innerHTML = `
+            <td>${e.key === ' ' ? 'Space' : e.key}</td>
+            <td>${e.keyCode}</td>
+            <td>${e.code}</td>
+        `;
+        
+        // Clear previous content and add new row
+        tableBody.innerHTML = '';
+        tableBody.appendChild(newRow);
+    });
+</script>
+</html>
